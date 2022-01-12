@@ -1,5 +1,5 @@
 {
-  "name": "astro tailwind+alpine",
+  "name": "astro-tailwind-alpine",
   "version": "0.0.1",
   "private": true,
   "scripts": {

@@ -17,7 +17,7 @@ const image = generateImage(
   // If our URL starts with a slash, let's assume the user know what they're doing and not alter the URL apart from the content prefix
   src.startsWith("/") ? "src/" + src : "src/" + url.pathname + "/" + src,
   Object.assign(options, {
-    widths: [null],
+    widths: [300, 600, 900, 1200, null],
     formats: ["avif", "webp", "png"],
     sharpWebpOptions: {
       quality: quality,
