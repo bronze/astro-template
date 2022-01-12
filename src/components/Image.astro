@@ -1,0 +1,51 @@
+---
+import Image from "@11ty/eleventy-img"
+import { generateImage } from "../utils.ts"
+import { Markdown } from "astro/components"
+const {
+  src,
+  alt,
+  caption,
+  options = {},
+  sizes = "",
+  classes = undefined,
+  quality = 90,
+} = Astro.props
+const { url } = Astro.request
+
+const image = generateImage(
+  // If our URL starts with a slash, let's assume the user know what they're doing and not alter the URL apart from the content prefix
+  src.startsWith("/") ? "src/" + src : "src/" + url.pathname + "/" + src,
+  Object.assign(options, {
+    widths: [null],
+    formats: ["avif", "webp", "png"],
+    sharpWebpOptions: {
+      quality: quality,
+    },
+    sharpAvifOptions: {
+      quality: quality,
+    },
+  }),
+  false,
+)
+
+const imageAttributes = {
+  alt: alt,
+  sizes: sizes,
+  loading: "lazy",
+  decoding: "async",
+}
+
+const html = Image.generateHTML(image, imageAttributes)
+const props: Record<string, string> = {}
+props.class ??= classes
+---
+
+<figure {...props}>
+  {html}
+  {caption && (
+    <figcaption>
+      <Markdown>{caption}</Markdown>
+    </figcaption>
+  )}
+</figure>
