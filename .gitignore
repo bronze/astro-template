@@ -205,3 +205,6 @@ tmp
 
 # VSCode workspace
 *.code-workspace
+
+# Project-specific
+public/assets/images/
