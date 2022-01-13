@@ -1,3 +1,7 @@
+---
+import ThemeToggleButton from './ThemeToggleButton.tsx';
+---
+
 <nav id="main-navigation">
   <ul>
     <li><a href="/" aria-current="page">Home</a></li>
@@ -5,6 +9,7 @@
     <li><a href="/tailwind">Tailwind</a></li>
     <li><a href="/alpine">Alpine</a></li>
     <li><a href="/image">Image</a></li>
+    <li><ThemeToggleButton client:visible /></li>
   </ul>
 </nav>
 
