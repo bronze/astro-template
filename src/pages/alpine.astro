@@ -1,0 +1,21 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+// Component Imports
+import Counter from '../components/Counter.astro';
+// https://github.com/markteekman/accessible-astro-starter
+let front = "Alpine";
+---
+
+<DefaultLayout {front}>
+  <section class="margin-32">
+    <!-- Note: no `client:load` necessary since AlpineJS is always included -->
+      <Counter>
+        <h1>Hello, AlpineJS!</h1>
+      </Counter>
+
+      <!-- Note: pass props to Astro components to initialize Alpine with a certain state -->
+      <Counter initialCount={5}>
+        <h2>Use Astro to pass in server-side props</h2>
+      </Counter>
+  </section>
+</DefaultLayout>

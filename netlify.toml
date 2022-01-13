@@ -10,9 +10,4 @@
   publish = "dist"
 
 [context.production.environment]
-    ELEVENTY_ENV = "production"
-
-[[redirects]]
-    from = "*"
-    to = "/404"
-    status = 404
+  ELEVENTY_ENV = "production"

@@ -2,10 +2,10 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import DarkMode from '../components/DarkMode.astro'
 // https://github.com/markteekman/accessible-astro-starter
-const { content = { title : "title", description: "description" } } = Astro.props;
+let front = "Front";
 ---
 
-<DefaultLayout proptitle="Prop Title" title="Home" {content}>
+<DefaultLayout title="Home" {front}>
   <section class="margin-32">
     <div class="container">
     <!-- <Image

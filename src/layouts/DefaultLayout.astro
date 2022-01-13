@@ -1,13 +1,27 @@
 ---
 import * as CONFIG from '../config';
 import * as utils from '../utils';
+import Scripts from '../components/Scripts.astro';
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import HeadSEO from '../components/HeadSEO.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 
 const {proptitle} = Astro.props
+const {front} = Astro.props
 const { content = {} } = Astro.props;
+let pagetitle = null;
+const fallback = CONFIG.SITE.title;
+if (content.title!=null) {
+  pagetitle = content.title
+} else if (proptitle!=null) {
+  pagetitle = proptitle
+} else if (front!=null) {
+  pagetitle = front
+} else {
+  pagetitle = fallback
+}
+console.log("pagetitle!  " + pagetitle);
 ---
 
 <html lang="en" dir="ltr">
@@ -33,26 +47,31 @@ const { content = {} } = Astro.props;
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://accessible-astro.markteekman.nl/">
     <meta property="og:image" content="assets/social-preview-image.png">
-
+    <script type="module" src={Astro.resolve('../scripts/turbo.js')}></script>
+    <link rel="stylesheet" href={Astro.resolve('../assets/styles/global.css')}>
     <!-- page title -->
-    <title>{content.title ? `${content.title} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}</title>
+    <title>{pagetitle ? `${pagetitle} 🚀 ${CONFIG.SITE.title}` : CONFIG.SITE.title}</title>
+    <!-- Be sure to include AlpineJS -->
+    <script src="//unpkg.com/alpinejs" defer></script>
   </head>
   <body>
+  <!-- pagetitle: {pagetitle}<br/>aaa
+  frontmatter: {front}<br/>
   proptitle: {proptitle}<br/>
   content.title: {content.title}<br/>
   content.description: {content.description}<br/>
-  CONFIG.SITE.title: {CONFIG.SITE.title}<br/>
+  CONFIG.SITE.title: {CONFIG.SITE.title}<br/> -->
     <!-- header -->
     <Header />
 
-    <!-- main -->2333
+    <!-- main -->
     <PageContent {content} >
       <slot />
     </PageContent>
 
     <!-- footer -->
     <Footer />
-
+    <Scripts />
   </body>
 </html>
 

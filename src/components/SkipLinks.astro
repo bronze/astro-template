@@ -11,36 +11,6 @@
 </section>
 
 <script>
-  // variables
-  const skipLinks = [...document.querySelectorAll('[data-skip-link]')]
-
-  // execution
-  if (skipLinks.length > 0) {
-    skipLinks.forEach(link => {
-      link.addEventListener('keydown', event => {
-        // if keydown event is not on the skip link itself, return and exit
-        if (!event.target.closest('[data-skip-link]')) return
-        const key = event.key
-        // if keydown event is nog an enter, return and exit
-        if (key !== 'Enter') return
-        // prevent default anchor behaviour
-        event.preventDefault()
-        const target = event.target.getAttribute('href')
-
-        // NOTE: add this when you have content or hyperlinks to skip before you main menu!
-        // set focus to first menu item for skip link to main navigation
-        // if (target === '#main-navigation') {
-        //   const navigation = document.querySelector('#main-navigation')
-        //   navigation.querySelector('a').focus()
-        // }
-
-        // set focus to first h1 for skip link to main content
-        if (target === '#main-content') {
-          document.querySelector('h1').focus()
-        }
-      })
-    })
-  }
 </script>
 
 <style lang="scss">

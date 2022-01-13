@@ -1,11 +1,17 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Image from '../components/Image.astro'
+
+// https://github.com/markteekman/accessible-astro-starter
+let front = "Front";
 ---
-<DefaultLayout >
-  <Image
-      src="/pages/cat.jpg"
-      alt="Cover of Flower Color Guide"
-      classes="image-left"
-      caption="Flower Color Guide" />
+
+<DefaultLayout title="Home" {front}>
+  <section class="margin-32">
+    <Image
+    src="/pages/cat.jpg"
+    alt="Picture of a cat"
+    classes="image-left"
+    caption="Caption of a picture of a cat" />
+  </section>
 </DefaultLayout>

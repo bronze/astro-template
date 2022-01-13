@@ -1,6 +1,6 @@
 <button class="darkmode-toggle" aria-pressed="false">Enable Dark Mode</button>
 
-<script>
+<script data-turbo="false">
   // variables
   let darkMode = localStorage.getItem('darkMode')
   const systemPrefs = window.matchMedia('(prefers-color-scheme: dark)').matches
