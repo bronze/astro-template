@@ -23,9 +23,10 @@ body {
   a {
     color: var(--action-color);
 
-    &:visited {
-      color: var(--action-color);
-    }
+    // visited links 2do
+    // &:not(nav>*):visited {
+    //   color: var(--action-color);
+    // }
 
     &:hover,
     &:focus {

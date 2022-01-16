@@ -8,6 +8,7 @@ import Footer from '../components/Footer.astro'
 import HeadSEO from '../components/HeadSEO.astro';
 import PageContent from '../components/PageContent/PageContent.astro';
 
+const { wrapper: Wrapper = Fragment, gradientHome = false } = Astro.props;
 const {proptitle} = Astro.props
 const {front} = Astro.props
 const { content = {} } = Astro.props;
@@ -32,7 +33,7 @@ console.log("pagetitle!  " + pagetitle);
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <HeadSEO {content} canonicalURL={Astro.request.canonicalURL} />
     <!-- favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" href="data:;base64,iVBORwOKGO=" />
 
     <!-- google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +56,7 @@ console.log("pagetitle!  " + pagetitle);
     <!-- Be sure to include AlpineJS -->
     <script src="//unpkg.com/alpinejs" defer></script>
   </head>
-  <body>
+  <body  class="leading-normal tracking-normal text-white gradient h-screen justify-between flex flex-col {{ gradientHome }}">
   <!-- pagetitle: {pagetitle}<br/>aaa
   frontmatter: {front}<br/>
   proptitle: {proptitle}<br/>
@@ -77,23 +78,5 @@ console.log("pagetitle!  " + pagetitle);
 </html>
 
 <style lang="scss">
-  // sticky footer on low content pages
-  html,
-  body {
-    height: 100%;
-  }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background);
-
-    main {
-      flex: 1 0 auto;
-    }
-
-    footer {
-      flex-shrink: 0;
-    }
-  }
 </style>

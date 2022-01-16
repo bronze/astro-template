@@ -10,12 +10,11 @@
   },
   "devDependencies": {
     "@11ty/eleventy-img": "^1.0.0",
-    "astro": "^0.22.10",
-    "netlify-cli": "^8.6.23",
+    "astro": "^0.22.13",
+    "netlify-cli": "^8.8.2",
     "quicklink": "^2.2.0",
-    "sass": "^1.47.0",
-    "stylus": "^0.56.0",
-    "tailwindcss": "^3.0.13"
+    "sass": "^1.48.0",
+    "tailwindcss": "^3.0.15"
   },
   "dependencies": {
     "@hotwired/turbo": "^7.1.0",
