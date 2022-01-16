@@ -5,4 +5,8 @@ module.exports = {
     './src/**/*.{astro,js,jsx,svelte,ts,tsx,vue}',
   ],
   // more options here
+  theme: {
+    extend: {},
+  },
+  plugins: [],
 };
