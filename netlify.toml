@@ -2,8 +2,8 @@
 # If you aren't using Netlify then you can delete this file
 
 [dev]
-  command = "npm run dev"
-  publish = "dist"
+command = "npm run dev"
+publish = "dist"
 
 [build]
   command = "npm run build"

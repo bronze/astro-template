@@ -4,7 +4,7 @@
 // |   Elevations utility token.
 // | -------------------------------------------------------------
 
-@use '../elevation' as *;
+@use "../elevation" as *;
 
 .elevation-100 {
   @include elevation-100;

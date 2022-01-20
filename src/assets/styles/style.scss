@@ -1,7 +1,7 @@
-@use 'base';
-@use 'utilities';
-@use 'components';
-@use 'layout';
+@use "base";
+@use "utilities";
+@use "components";
+@use "layout";
 
 .alert {
   @apply bg-red-500 !important;

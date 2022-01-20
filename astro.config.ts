@@ -1,4 +1,4 @@
-import type { AstroUserConfig } from "astro";
+import type {AstroUserConfig} from "astro";
 
 const config: AstroUserConfig = {
   buildOptions: {
@@ -7,9 +7,10 @@ const config: AstroUserConfig = {
   },
   renderers: [
     // Enable the Preact renderer to support Preact JSX components.
-    '@astrojs/renderer-preact',
+    "@astrojs/renderer-preact",
     // Enable the React renderer, for the Algolia search component
-    '@astrojs/renderer-react','@astrojs/renderer-vue'
+    "@astrojs/renderer-react",
+    "@astrojs/renderer-vue",
   ],
 };
 

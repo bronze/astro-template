@@ -7,7 +7,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "netlify": "netlify deploy --build --prodIfUnlocked -o"
+    "local": "netlify dev:exec npm run dev",
+    "deploy": "netlify deploy --build --prodIfUnlocked -o"
   },
   "devDependencies": {
     "@11ty/eleventy-img": "^1.0.0",

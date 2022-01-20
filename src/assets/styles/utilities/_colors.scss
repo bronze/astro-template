@@ -1,7 +1,6 @@
-@use '../abstracts'as *;
+@use "../abstracts" as *;
 
 @each $color, $shade in $colors {
-
   @each $property, $value in $shade {
     .text-#{$color}-#{$property} {
       color: hsl(var(--clr-#{$color}-#{$property}));
@@ -15,9 +14,10 @@
 
 .bg-gradient {
   color: hsl(var(--clr-neutral-100));
-  background-image: 
-    linear-gradient(var(--bg-deg, -45deg),
+  background-image: linear-gradient(
+    var(--bg-deg, -45deg),
     hsl(var(--clr-primary-400)),
     hsl(var(--clr-secondary-500)),
-    hsl(var(--clr-accent-500)));
+    hsl(var(--clr-accent-500))
+  );
 }

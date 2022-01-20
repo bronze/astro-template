@@ -4,8 +4,8 @@
 // |   Size Content utility token.
 // | -------------------------------------------------------------
 
-@use '../breakpoint' as *;
-@use '../size' as *;
+@use "../breakpoint" as *;
+@use "../size" as *;
 
 .size-content {
   > p,
@@ -21,6 +21,8 @@
   > a:not([class]),
   > a[class*="vuedes__button type-tertiary"] {
     @include size-16;
-    @include breakpoint(large) { @include size-18; }
+    @include breakpoint(large) {
+      @include size-18;
+    }
   }
 }
