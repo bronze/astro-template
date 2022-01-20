@@ -1,0 +1,13 @@
+@use '../abstracts' as *;
+
+:root {
+  --section-spacing: 3.5rem;
+  @include mq(medium) {
+    --section-spacing: 7em;
+  }
+  @each $color, $shade in $colors {
+    @each $prop, $value in $shade {
+      --clr-#{$color}-#{$prop}: ${value};
+    }
+  }
+}
